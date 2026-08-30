@@ -1,0 +1,32 @@
+# Dataset
+datasets/
+**/datasets/
+Celeb-DF-v2/
+**/Celeb-DF-v2/
+Celeb-DF-v2.zip
+**/Celeb-DF-v2.zip
+
+# Processed face images
+results/processed_faces/
+**/processed_faces/
+
+# Large video files
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# Virtual environments
+venv/
+.venv/
+env/
