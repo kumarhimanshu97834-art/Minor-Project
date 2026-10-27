@@ -1,0 +1,25 @@
+MINOR PROJECT: DEEPFAKE DETECTION GENERALIZATION
+
+Objective:
+To evaluate deepfake classification using a Custom CNN and ResNet50.
+
+Dataset:
+Celeb-DF-v2 face images. Labels: 0 = Real, 1 = Deepfake.
+
+Methodology:
+Video-wise train/validation/test split, image preprocessing, model training,
+held-out test evaluation, confusion matrix and error analysis.
+
+Final model metrics:
+     model  accuracy  precision_fake  recall_fake  f1_fake  recall_real
+Custom CNN    0.7365          0.8651       0.8172   0.8404       0.2817
+  ResNet50    0.7673          0.9037       0.8126   0.8557       0.5118
+
+Limitations:
+Results on a held-out split do not by themselves prove cross-dataset
+generalization. External dataset evaluation is required for that claim.
+Face images from the same source video must not cross data splits.
+
+Conclusion:
+Compare both models using accuracy, precision, recall and F1-score.
+Consider real-class recall as well as deepfake detection performance.

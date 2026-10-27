@@ -1,0 +1,2 @@
+evaluation,accuracy,precision_fake,recall_fake,f1_fake,recall_real,number_of_images
+Held-out test split,0.767260940032415,0.9036502546689303,0.8125954198473282,0.8557073954983923,0.5118279569892473,6170
