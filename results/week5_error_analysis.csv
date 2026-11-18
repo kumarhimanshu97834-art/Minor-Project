@@ -1,0 +1,5 @@
+Error Type,Description,Count
+True Negative,Real correctly predicted as Real,47
+False Positive,Real incorrectly predicted as Fake,3
+False Negative,Fake incorrectly predicted as Real,40
+True Positive,Fake correctly predicted as Fake,10

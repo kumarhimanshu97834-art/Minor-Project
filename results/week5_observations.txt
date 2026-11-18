@@ -1,0 +1,30 @@
+
+WEEK 5: RESNET50 EVALUATION SUMMARY
+
+Dataset: Celeb-DF-v2
+Evaluation type: Preliminary balanced test set
+
+Total samples: 100
+
+Accuracy: 0.5700
+Precision (Fake): 0.7692
+Recall (Fake): 0.2000
+F1-Score (Fake): 0.3175
+
+True Negative: 47
+False Positive: 3
+False Negative: 40
+True Positive: 10
+
+OBSERVATIONS:
+1. The model correctly identifies 47 real samples.
+2. The model correctly identifies 10 fake samples.
+3. The model incorrectly classifies 40 fake samples as real.
+4. Fake-class recall is low and needs improvement.
+5. Further model optimization and threshold analysis are required.
+
+LIMITATION:
+This analysis uses an existing 100-sample confusion matrix.
+Individual predictions and prediction probabilities are unavailable.
+Therefore, ROC-AUC is retained from the existing results CSV.
+An ROC curve and image-level error analysis cannot be generated.
