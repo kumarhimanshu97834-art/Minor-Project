@@ -1,41 +1,74 @@
-# Dataset
+
+# ==================================
+# DATASETS - DO NOT UPLOAD
+# ==================================
 datasets/
 **/datasets/
 Celeb-DF-v2/
 **/Celeb-DF-v2/
 Celeb-DF-v2.zip
 **/Celeb-DF-v2.zip
+external_unseen_data/
+**/external_unseen_data/
 
-# Processed face images
+# ==================================
+# PROCESSED FACE IMAGES
+# ==================================
 results/processed_faces/
+results/processed_faces_v2/
 **/processed_faces/
+**/processed_faces_v2/
 
-# Large video files
+# ==================================
+# LARGE VIDEO FILES
+# ==================================
 *.mp4
 *.avi
 *.mov
 *.mkv
 
-# Python
+# ==================================
+# PYTHON
+# ==================================
 __pycache__/
 *.pyc
-
-# Jupyter
-.ipynb_checkpoints/
-
-# VS Code
-.vscode/
-
-# Virtual environments
 venv/
 .venv/
 env/
-research paper/
 
-# Trained model weights
+# ==================================
+# JUPYTER
+# ==================================
+.ipynb_checkpoints/
+
+# ==================================
+# VS CODE
+# ==================================
+.vscode/
+
+# ==================================
+# MODEL WEIGHTS
+# ==================================
 *.pth
+*.pt
+*.h5
+*.keras
 notebooks/models/
 
-# Python cache and Jupyter checkpoints
-__pycache__/
-.ipynb_checkpoints/
+# ==================================
+# RESEARCH PAPERS
+# ==================================
+research paper/
+
+# ==================================
+# ENVIRONMENT / SECRETS
+# ==================================
+.env
+.env.*
+!.env.example
+
+# ==================================
+# TEMPORARY FILES
+# ==================================
+.DS_Store
+Thumbs.db

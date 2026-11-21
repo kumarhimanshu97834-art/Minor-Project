@@ -1,0 +1,7 @@
+Metric,Value
+Total Videos,1233.0
+Correct Predictions,1121.0
+False Positives,101.0
+False Negatives,11.0
+Total Errors,112.0
+Prediction Accuracy,0.9092
