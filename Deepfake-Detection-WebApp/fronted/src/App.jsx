@@ -45,7 +45,7 @@ function App() {
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:8001${endpoint}`,
+        `https://minor-project-1-7g7c.onrender.com${endpoint}`,
         {
           method: 'POST',
           body: formData
