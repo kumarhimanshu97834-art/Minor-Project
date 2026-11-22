@@ -1,4 +1,21 @@
+# Python
+**/venv/
+**/__pycache__/
+*.pyc
 
+# React
+**/node_modules/
+**/dist/
+
+# Temporary uploads
+**/uploads/
+
+# Environment files
+.env
+.env.*
+
+# IDE
+.vscode/
 # ==================================
 # DATASETS - DO NOT UPLOAD
 # ==================================
