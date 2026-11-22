@@ -1,2 +1,2 @@
 Model,Accuracy,Precision,Recall,F1-Score,ROC-AUC,Evaluation
-ResNet50,0.57,0.7692307692307693,0.2,0.31746031746031744,0.40080000000000005,Balanced small test set
+ResNet50,0.5,0.0,0.0,0.0,0.446,Balanced small test set
