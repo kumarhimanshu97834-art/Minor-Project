@@ -138,6 +138,19 @@ http://localhost:5173
 - Deploy the application online.
 - Improve model robustness against unseen deepfakes.
 
+## 🚀 Live Project
+
+**Deepfake Detection AI – Live Demo**
+
+- 🌐 **Frontend Website:** https://minor-project-smoky-nine.vercel.app
+- ⚙️ **Backend API:** https://minor-project-1-7g7c.onrender.com
+- 🩺 **API Health Check:** https://minor-project-1-7g7c.onrender.com/health
+- 📚 **API Documentation:** https://minor-project-1-7g7c.onrender.com/docs
+
+Try the live application by uploading an image or video to detect whether it is real or fake.
+
+*Note: The backend runs on Render Free and may take some time to wake up after inactivity. Predictions are experimental and may not always be accurate.*
+
 ## Disclaimer
 
 This project is developed for educational and research purposes. AI-generated predictions may be inaccurate and should not be considered definitive proof that media is real or fake.
