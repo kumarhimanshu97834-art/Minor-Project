@@ -1,6 +1,8 @@
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
+
+const API_BASE_URL = 'https://minor-project-1-7g7c.onrender.com'
 
 function App() {
   const [file, setFile] = useState(null)
@@ -9,6 +11,43 @@ function App() {
   const [loading, setLoading] = useState(false)
   const [result, setResult] = useState(null)
   const [error, setError] = useState('')
+  const [backendReady, setBackendReady] = useState(false)
+
+  // Automatically wake up the backend
+  useEffect(() => {
+    let cancelled = false
+    let retryTimer
+
+    const wakeBackend = async () => {
+      try {
+        const response = await fetch(`${API_BASE_URL}/health`)
+
+        if (!response.ok) {
+          throw new Error('Backend is starting')
+        }
+
+        const data = await response.json()
+
+        if (data.status === 'healthy' && !cancelled) {
+          setBackendReady(true)
+          return
+        }
+      } catch (err) {
+        console.log('Waiting for backend to wake up...')
+      }
+
+      if (!cancelled) {
+        retryTimer = setTimeout(wakeBackend, 5000)
+      }
+    }
+
+    wakeBackend()
+
+    return () => {
+      cancelled = true
+      clearTimeout(retryTimer)
+    }
+  }, [])
 
   function handleFile(event) {
     const selectedFile = event.target.files[0]
@@ -30,7 +69,7 @@ function App() {
   }
 
   async function handleAnalyze() {
-    if (!file) return
+    if (!file || !backendReady) return
 
     setLoading(true)
     setError('')
@@ -45,7 +84,7 @@ function App() {
 
     try {
       const response = await fetch(
-        `https://minor-project-1-7g7c.onrender.com${endpoint}`,
+        `${API_BASE_URL}${endpoint}`,
         {
           method: 'POST',
           body: formData
@@ -91,6 +130,15 @@ function App() {
           <h3>Upload Image or Video</h3>
           <p>JPG, PNG, WEBP, MP4, MOV, AVI supported</p>
 
+          <p style={{
+            color: backendReady ? 'green' : 'orange',
+            fontWeight: 'bold'
+          }}>
+            {backendReady
+              ? '● AI Server Ready'
+              : '● Connecting to AI Server... Please wait'}
+          </p>
+
           <input
             type="file"
             accept="image/jpeg,image/png,image/webp,video/mp4,video/quicktime,video/x-msvideo"
@@ -120,10 +168,15 @@ function App() {
           )}
 
           {file && (
-            <button onClick={handleAnalyze} disabled={loading}>
+            <button
+              onClick={handleAnalyze}
+              disabled={loading || !backendReady}
+            >
               {loading
                 ? 'Analyzing...'
-                : `Analyze ${fileType === 'video' ? 'Video' : 'Image'}`}
+                : !backendReady
+                  ? 'Connecting to Server...'
+                  : `Analyze ${fileType === 'video' ? 'Video' : 'Image'}`}
             </button>
           )}
 

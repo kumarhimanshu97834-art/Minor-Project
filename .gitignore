@@ -89,3 +89,4 @@ research paper/
 # ==================================
 .DS_Store
 Thumbs.db
+*.backup
